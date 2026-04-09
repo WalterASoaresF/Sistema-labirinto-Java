@@ -2,11 +2,7 @@ package labirinto;
 
 import java.util.Scanner;
 
-//INTEGRANTES: David Lucas, Guilherme Brasileiro, João Pedro Sena, Matheus Novais, Water Soares
-
 public class TrabalhoLabirinto {
-	
-	//DECLARANDO AS VARIÁVEIS ESTÁTICAS
 	
 	static String vertical = "|";
 	static String horizontal = "-";
@@ -23,21 +19,15 @@ public class TrabalhoLabirinto {
 	static Scanner sc= new Scanner(System.in);
 	
 	
-	//GERANDO O TABULEIRO DO LABIRINTO
-	
 	public static void GerarTabuleiro() {	
-		
-		//DESENHO 
-		
+				
 		for (int i=0; i<tamanho; i++) {
 			tabuleiro [0] [i] = horizontal;
 			tabuleiro [tamanho-1] [i] = horizontal;
 			tabuleiro [i] [0] = vertical;
 			tabuleiro [i] [tamanho-1] = vertical;
 		}
-		
-		//PREENCHENDO O ESPAÇO INTERIOR
-		
+				
 		for (int i=1; i<tamanho-1; i++) {
 			for (int j=1; j<tamanho-1; j++) {
 				if (Math.random()>probabilidade) {
@@ -51,19 +41,13 @@ public class TrabalhoLabirinto {
 			}	
 		}
 		
-	                
-				
-		//INICIO, FIM E BONECO
-		
+	                		
 		tabuleiro [1][1]= "P";
 		tabuleiro [linha][coluna]= boneco;
 		tabuleiro [tamanho-2][tamanho-2]="S";
 	}
 		
-	
-	
-	//IMPRIMINDO TABULEIRO
-	
+		
 	public static void ImprimirTabuleiro() {
 		for (int i=0; i<tamanho; i++) {
 			for (int j=0; j<tamanho; j++) {
